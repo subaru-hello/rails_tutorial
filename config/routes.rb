@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  get  '/signup',  to: 'users#new'
+  get  '/signup', to: 'users#new'
   root to: 'static_pages#home'
   get  'static_pages/home'
   get  'static_pages/help'

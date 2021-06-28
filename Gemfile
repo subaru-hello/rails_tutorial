@@ -1,27 +1,31 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'rails',      '6.0.3'
-gem 'puma',       '4.3.6'
-gem 'sass-rails', '5.1.0'
-gem 'webpacker',  '4.0.7'
-gem 'turbolinks', '5.2.0'
-gem 'jbuilder',   '2.9.1'
-gem 'bootsnap',   '1.4.5', require: false
-gem 'bootstrap-sass'
-gem 'jquery-rails'
-gem 'rails-controller-testing'
 gem 'bcrypt'
+gem 'bootsnap', '1.4.5', require: false
+gem 'bootstrap-sass'
+gem 'jbuilder', '2.9.1'
+gem 'jquery-rails'
+gem 'puma', '4.3.6'
+gem 'rails', '6.0.3'
+gem 'rails-controller-testing'
+gem 'rubocop', require: false
+gem 'rubocop-rails', require: false
+gem 'sass-rails', '5.1.0'
+gem 'turbolinks', '5.2.0'
+gem 'webpacker',  '4.0.7'
 group :development, :test do
+  gem 'byebug',  '11.0.1', platforms: %i[mri mingw x64_mingw]
   gem 'sqlite3', '1.4.1'
-  gem 'byebug',  '11.0.1', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
-  gem 'web-console',           '4.0.1'
   gem 'listen',                '3.1.5'
   gem 'spring',                '2.1.0'
   gem 'spring-watcher-listen', '2.0.1'
+  gem 'web-console',           '4.0.1'
 end
 
 group :test do
@@ -35,4 +39,4 @@ group :production do
 end
 
 # Windows ではタイムゾーン情報用の tzinfo-data gem を含める必要があります
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
