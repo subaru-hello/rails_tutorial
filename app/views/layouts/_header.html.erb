@@ -9,7 +9,7 @@
         <li class="nav-item"><%= link_to "Help", static_pages_help_path%></li>
 
                 <% if logged_in? %>
-          <li class="nav-item"><%= link_to "Users", '#' %></li>
+          <li class="nav-item"><%= link_to "Users", users_path %></li>
           <li class="nav-item dropdown">
             <a href="#" class="dropdown-toggle nav-item" data-toggle="dropdown">
               Account <b class="caret"></b>
