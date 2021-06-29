@@ -3,7 +3,8 @@
 Rails.application.routes.draw do
   get 'sessions/new'
   get  '/signup', to: 'users#new'
-  root to: 'static_pages#home'
+  # post  '/signup', to: 'users#new'
+  root 'static_pages#home'
   get  'static_pages/home'
   get  'static_pages/help'
   get  'static_pages/about'
@@ -13,4 +14,5 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   resources :static_pages
   resources :users
+  
 end

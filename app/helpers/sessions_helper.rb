@@ -12,7 +12,7 @@ module SessionsHelper
 
  # 永続的セッションを破棄する
  def forget(user)
-    user.forget
+    forget(current_user)
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
   end
@@ -41,7 +41,6 @@ module SessionsHelper
 
    # 現在のユーザーをログアウトする
   def log_out
-    forget(current_user)
     session.delete(:user_id)
     @current_user = nil
   end
@@ -51,6 +50,7 @@ module SessionsHelper
     redirect_to(session[:forwarding_url] || default)
     session.delete(:forwarding_url)
   end
+
     # アクセスしようとしたURLを覚えておく
     def store_location
         session[:forwarding_url] = request.original_url if request.get?
