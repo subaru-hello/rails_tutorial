@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class SessionsController < ApplicationController
   def new; end
 
@@ -17,7 +15,6 @@ class SessionsController < ApplicationController
         redirect_to root_url
       end
     else
-      # エラーメッセージを作成する
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
     end
