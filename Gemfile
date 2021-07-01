@@ -22,6 +22,7 @@ gem 'webpacker',  '4.0.7'
 gem 'will_paginate'
 group :development, :test do
   gem 'byebug',  '11.0.1', platforms: %i[mri mingw x64_mingw]
+  gem 'libv8', '~> 5.9', '>= 5.9.211.38.1'
   gem 'sqlite3', '1.4.1'
 end
 
