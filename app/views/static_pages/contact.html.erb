@@ -1,6 +1,30 @@
 <% provide(:title, "Contact") %>
 <h1>Contact</h1>
-<p>
-  Contact the Ruby on Rails Tutorial about the sample app at the
-  <a href="https://railstutorial.jp/contact">contact page</a>.
-</p>
+  <h1>円グラフ</h1>
+  <canvas id="myPieChart"></canvas>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
+  <script>
+  var ctx = document.getElementById("myPieChart");
+  var myPieChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ["ゲーム", "SNS", "Youtube", "酒"],
+      datasets: [{
+          backgroundColor: [
+              "#BB5179",
+              "#FAFF67",
+              "#58A27C",
+              "#3C00FF"
+          ],
+          data: [38, 31, 21, 10]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: '無駄時間 割合'
+      }
+    }
+  });
+  </script>
