@@ -11,7 +11,7 @@ require("channels")
 require("jquery")
 require('bootstrap/dist/js/bootstrap.min.js')
 import "bootstrap"
-
+import "chartkick/chart.js"
 
 
 

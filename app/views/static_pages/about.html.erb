@@ -8,3 +8,8 @@
   <a href="https://rubyonrails.org/">Ruby on Rails</a>.
   This is the sample application for the tutorial.
 </p>
+
+<%# <%= pie_chart({"可処分時間" => @diposabletime, "睡眠時間" => @sleep_time"通勤時間"=>@commute_time,"食事時間"=>@meal_time,"勤務時間"=>@working_time}),label: "1日の時間" %> 
+<%= pie_chart({"可処分時間" => 420,  "睡眠時間" => 420,"通勤時間"=>60,"食事時間"=>60,"勤務時間"=>420})%>
+
+
