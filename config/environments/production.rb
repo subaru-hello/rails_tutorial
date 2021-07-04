@@ -14,7 +14,8 @@ Rails.application.configure do
     domain: host,
     authentication: :plain
   }
-
+# アップロードされたファイルをAWSに保存する
+config.active_storage.service = :amazon
   # Code is not reloaded between requests.
   config.cache_classes = true
 

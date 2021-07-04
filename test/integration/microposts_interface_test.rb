@@ -19,12 +19,11 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_select 'a[href=?]', '/?page=2'  # 正しいページネーションリンク
     # 有効な送信
     content = "This micropost really ties the room together"
-      image = fixture_file_upload('test/fixtures/kitten.jpg', 'image/jpeg')
+    picture = fixture_file_upload('test/fixtures/kitten.jpg', 'image/jpeg')
     assert_difference 'Micropost.count', 1 do
-          post microposts_path, params: { micropost:
-                                      { content: content, image: image } }
+      post microposts_path, params: { micropost: { content: content, picture: picture } }
     end
-        assert Micropost.image.attached?
+        # assert @micropost.image.attached?
     assert_redirected_to root_url
     follow_redirect!
     assert_match content, response.body
