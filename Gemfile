@@ -2,13 +2,15 @@
 
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-
+gem 'active_storage_validations', '0.8.2'
 gem 'bcrypt'
 gem 'bootsnap', '1.4.5', require: false
 gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate'
 gem 'chartkick'
 gem 'faker'
+gem 'image_processing',           '1.9.3'
+gem 'mini_magick',                '4.9.5'
 gem 'jbuilder', '2.9.1'
 gem 'jquery-rails'
 gem 'pre-commit'

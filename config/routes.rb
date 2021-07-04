@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'sessions/new'
@@ -11,12 +14,9 @@ Rails.application.routes.draw do
   get  'static_pages/help'
   get  'static_pages/about'
   get  'static_pages/contact'
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
+  resources :microposts, only: %i[create destroy]
   resources :static_pages
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: %i[new create edit update]
-  resources :microposts,          only: [:create, :destroy]
 end
