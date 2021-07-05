@@ -14,9 +14,14 @@ Rails.application.routes.draw do
   get  'static_pages/help'
   get  'static_pages/about'
   get  'static_pages/contact'
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :microposts, only: %i[create destroy]
   resources :static_pages
-  resources :users
+  resources :relationships,       only: [:create, :destroy]
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: %i[new create edit update]
 end

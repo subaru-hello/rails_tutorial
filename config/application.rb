@@ -13,9 +13,7 @@ module HelloApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
     config.action_view.field_error_proc = proc { |html_tag, _instance| html_tag }
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration can go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded after loading
-    # the framework and any gems in your application.
+     # 認証トークンをremoteフォームに埋め込む
+    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end
