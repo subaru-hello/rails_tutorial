@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   end
   resources :microposts, only: %i[create destroy]
   resources :static_pages
-  resources :relationships,       only: [:create, :destroy]
+  resources :relationships,       only: %i[create destroy]
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: %i[new create edit update]
 end
